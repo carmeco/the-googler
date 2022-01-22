@@ -8,6 +8,7 @@ import { Wrapper, DescriptionTextArea } from "./CreateNote.styles";
 
 const CreateNote = () => {
     //refs to DOM elements
+    const formRef = useRef(null);
     const noteTitleRef = useRef(null);
     const noteDescriptionRef = useRef(null);
     const noteTagsRef = useRef(null);
@@ -26,11 +27,12 @@ const CreateNote = () => {
                 tags: noteTagsRef.current.value,
             },
         ]);
+        formRef.current.reset();
     };
 
     return (
         <Wrapper>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} ref={formRef}>
                 <input
                     type="text"
                     ref={noteTitleRef}
