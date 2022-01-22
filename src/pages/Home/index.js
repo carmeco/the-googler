@@ -1,18 +1,20 @@
 import React from "react";
 
+//styles
+import { Wrapper, Main } from "./Home.styles";
+
 //components
 import Login from "../../components/Login";
 import Signup from "../../components/Signup";
 
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
-            <h2>Sign Up</h2>
-            <Signup />
-            <h2>Login</h2>
-            <Login />
-        </div>
+        <Wrapper>
+            <Main>
+                <Signup />
+                <Login />
+            </Main>
+        </Wrapper>
     );
 };
 

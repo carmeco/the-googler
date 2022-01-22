@@ -9,7 +9,6 @@ import {
     Buttons,
     Description,
     DescriptionTextArea,
-    Content,
     Tags,
 } from "./NoteBox.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -81,11 +80,11 @@ const NoteBox = ({ note, index }) => {
                     <button type="submit">Save changes</button>
                 </form>
             ) : (
-                <Content>
+                <div>
                     <h2>{title}</h2>
                     <Description>{description}</Description>
                     {tags ? <Tags>{tags}</Tags> : null}
-                </Content>
+                </div>
             )}
         </Wrapper>
     );

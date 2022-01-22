@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
         ul, ol {
             list-style: none;
         }
+        h2 {
+            font-size: 1.2rem;
+            padding: 0.2rem 0;
+        }
     }
 `;
 

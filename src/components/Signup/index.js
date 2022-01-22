@@ -19,6 +19,7 @@ const Signup = () => {
     };
     return (
         <form onSubmit={handleSubmit}>
+            <h2>Sign Up</h2>
             <ul>
                 <li>
                     <label htmlFor="user">User</label>

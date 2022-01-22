@@ -15,6 +15,7 @@ export const Buttons = styled.div`
 
     button {
         opacity: 0.5;
+        color: var(--darkBlue);
         background-color: none;
         border: none;
         &:hover {
@@ -36,8 +37,6 @@ export const Description = styled.p`
 export const DescriptionTextArea = styled.textarea`
     resize: none;
 `;
-
-export const Content = styled.div``;
 
 export const Tags = styled.p`
     border-top: 1px solid var(--darkBlue);
