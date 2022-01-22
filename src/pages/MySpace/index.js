@@ -11,7 +11,7 @@ import NotesList from "../../components/NotesList";
 
 const MySpace = () => {
     //getting data from Context
-    const { userLogged, userNotes } = useContext(UserContext);
+    const { userLogged, setUserLogged, userNotes } = useContext(UserContext);
 
     //saving data in localStorage
     useEffect(() => {
@@ -21,13 +21,20 @@ const MySpace = () => {
         );
     }, [userLogged, userNotes]);
 
+    const logOut = () => {
+        setUserLogged(null);
+        localStorage.removeItem("loggedInUsername");
+    };
+
     return (
         <Wrapper>
             <Header>
                 <h1>The Googler</h1>
                 <ul>
                     <li>Hello {userLogged.userName}!</li>
-                    <li>Log Out</li>
+                    <li>
+                        <a onClick={logOut}>Log Out</a>
+                    </li>
                 </ul>
             </Header>
             <Main>

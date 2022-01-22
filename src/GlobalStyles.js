@@ -24,6 +24,9 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 1.2rem;
             padding: 0.2rem 0;
         }
+        a:hover, button:hover {
+            cursor: pointer;
+        }
     }
 `;
 

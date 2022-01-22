@@ -19,7 +19,6 @@ export const Buttons = styled.div`
         background-color: none;
         border: none;
         &:hover {
-            cursor: pointer;
             opacity: 1;
         }
     }
