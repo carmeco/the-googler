@@ -15,9 +15,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const NoteBox = ({ note, index }) => {
+    //edit mode state
     const [editMode, setEditMode] = useState(false);
 
-    //note states
+    //notes props states
     const [title, setTitle] = useState(note.title);
     const [description, setDescription] = useState(note.description);
     const [tags, setTags] = useState(note.tags);
@@ -40,7 +41,7 @@ const NoteBox = ({ note, index }) => {
         setEditMode(false);
     };
 
-    //delete a note
+    //delete a note function
     const deleteNote = () => {
         setUserNotes((prev) => {
             const newUserNotes = [...prev];

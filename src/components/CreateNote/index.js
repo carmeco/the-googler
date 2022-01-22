@@ -16,7 +16,7 @@ const CreateNote = () => {
     //context for notes
     const { setUserNotes } = useContext(UserContext);
 
-    //submit a note
+    //handle submit a note
     const handleSubmit = (event) => {
         event.preventDefault();
         setUserNotes((prev) => [

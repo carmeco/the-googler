@@ -19,8 +19,10 @@ const MySpace = () => {
             `${userLogged.userName}Notes`,
             JSON.stringify(userNotes)
         );
+        localStorage.setItem("loggedInUsername", userLogged.userName);
     }, [userLogged, userNotes]);
 
+    //log out function
     const logOut = () => {
         setUserLogged(null);
         localStorage.removeItem("loggedInUsername");
@@ -33,7 +35,7 @@ const MySpace = () => {
                 <ul>
                     <li>Hello {userLogged.userName}!</li>
                     <li>
-                        <a onClick={logOut}>Log Out</a>
+                        <button onClick={logOut}>Log Out</button>
                     </li>
                 </ul>
             </Header>

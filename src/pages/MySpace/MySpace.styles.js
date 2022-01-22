@@ -34,6 +34,11 @@ export const Header = styled.header`
             gap: 1rem;
         }
     }
+
+    button {
+        all: inherit;
+        cursor: pointer;
+    }
 `;
 
 export const Main = styled.main`

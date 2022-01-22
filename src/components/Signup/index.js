@@ -8,7 +8,7 @@ const Signup = () => {
     //getting users from local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    //form submitting
+    //handle form submit
     const handleSubmit = (event) => {
         event.preventDefault();
         users.push({

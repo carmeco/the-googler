@@ -1,5 +1,4 @@
 import React, { useRef, useContext, useState } from "react";
-import { useNavigate } from "react-router";
 
 //context
 import { UserContext } from "../../context/userContext";
@@ -18,25 +17,21 @@ const Login = () => {
     //state for feedback on submitting
     const [feedback, setFeedback] = useState("");
 
-    //navigation
-    const navigate = useNavigate();
-
-    //form submitting
+    //handle form submit
     const handleSubmit = (event) => {
         event.preventDefault();
         const user = users.find(
             (user) => user.userName === userInput.current.value
         );
         if (!user) {
-            setFeedback("Usuari no registrat");
+            setFeedback("User not found");
         } else if (user.password === passwordInput.current.value) {
             setUserLogged(user);
             setUserNotes(
                 JSON.parse(localStorage.getItem(`${user.userName}Notes`)) || []
             );
-            navigate("/my-space");
         } else {
-            setFeedback("Contrasenya incorrecta");
+            setFeedback("Invalid password");
         }
     };
 

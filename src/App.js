@@ -3,12 +3,12 @@ import { UserContextProvider } from "./context/userContext";
 import { GlobalStyle } from "./GlobalStyles";
 
 //routes
-import Routing from "./Routing";
+import Content from "./Content";
 
 function App() {
     return (
         <UserContextProvider>
-            <Routing />
+            <Content />
             <GlobalStyle />
         </UserContextProvider>
     );
