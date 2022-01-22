@@ -1,36 +1,29 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 
 //context
-import { LoginContext } from "../../context/loginContext";
+import { UserContext } from "../../context/userContext";
 
 //components
 import CreateNote from "../../components/CreateNote";
-import NoteBox from "../../components/NoteBox";
+import SavedNotesList from "../../components/SavedNotesList";
 
 const MySpace = () => {
-    //getting userLogged from Context
-    const { userLogged } = useContext(LoginContext);
+    //getting data from Context
+    const { userLogged, userNotes } = useContext(UserContext);
 
-    //setting notes from localStorage in a state
-    const [userNotes, setUserNotes] = useState(
-        JSON.parse(localStorage.getItem(`${userLogged.userName}`)) || []
-    );
-
-    //saving notes in localStorage
+    //saving data in localStorage
     useEffect(() => {
         localStorage.setItem(
-            `${userLogged.userName}`,
+            `${userLogged.userName}Notes`,
             JSON.stringify(userNotes)
         );
-    }, [userNotes]);
+    }, [userLogged, userNotes]);
 
     return (
         <div>
             <h1>My Space</h1>
-            <CreateNote userNotes={userNotes} setUserNotes={setUserNotes} />
-            {userNotes.map((note, index) => (
-                <NoteBox key={index} note={note} />
-            ))}
+            <CreateNote />
+            <SavedNotesList />
         </div>
     );
 };

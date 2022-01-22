@@ -1,15 +1,15 @@
 import React, { useRef, useContext } from "react";
 
 //context
-import { LoginContext } from "../../context/loginContext";
+import { UserContext } from "../../context/userContext";
 
-const CreateNote = ({ setUserNotes }) => {
+const CreateNote = () => {
     //refs to DOM elements
     const noteTitleRef = useRef(null);
     const noteDescriptionRef = useRef(null);
 
-    //getting user from context
-    const { userLogged } = useContext(LoginContext);
+    //getting data from context
+    const { setUserNotes } = useContext(UserContext);
 
     //submit a note
     const handleSubmit = (event) => {

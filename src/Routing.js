@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 //context
-import { LoginContext } from "./context/loginContext";
+import { UserContext } from "./context/userContext";
 
 //pages
 import Home from "./pages/Home";
 import MySpace from "./pages/MySpace";
 
 const Routing = () => {
-    const { isLogged } = useContext(LoginContext);
+    const { userLogged } = useContext(UserContext);
 
     return (
         <BrowserRouter>
@@ -18,7 +18,7 @@ const Routing = () => {
                 <Route
                     path="/my-space"
                     element={
-                        isLogged ? <MySpace /> : <Navigate to="/" replace />
+                        userLogged ? <MySpace /> : <Navigate to="/" replace />
                     }
                 />
             </Routes>

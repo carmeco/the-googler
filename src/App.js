@@ -1,14 +1,14 @@
 //context
-import { LoginContextProvider } from "./context/loginContext";
+import { UserContextProvider } from "./context/userContext";
 
 //routes
 import Routing from "./Routing";
 
 function App() {
     return (
-        <LoginContextProvider>
+        <UserContextProvider>
             <Routing />
-        </LoginContextProvider>
+        </UserContextProvider>
     );
 }
 

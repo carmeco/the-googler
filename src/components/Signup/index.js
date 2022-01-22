@@ -1,12 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 const Signup = () => {
     //refs to the DOM
     const userInput = useRef(null);
     const passwordInput = useRef(null);
-
-    //state for submit
-    const [submit, setSubmit] = useState(false);
 
     //getting users from local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -19,7 +16,6 @@ const Signup = () => {
             password: passwordInput.current.value,
         });
         localStorage.setItem("users", JSON.stringify(users));
-        setSubmit(true);
     };
     return (
         <form onSubmit={handleSubmit}>
