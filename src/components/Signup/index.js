@@ -6,7 +6,7 @@ const Signup = () => {
     const passwordInput = useRef(null);
 
     //state for submit
-    const [setSubmit] = useState(false);
+    const [submit, setSubmit] = useState(false);
 
     //getting users from local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
