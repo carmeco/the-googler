@@ -19,7 +19,11 @@ const NotesList = () => {
             <CreateNote />
             {userNotes &&
                 userNotes.map((note, index) => (
-                    <NoteBox key={index} note={note} index={index} />
+                    <NoteBox
+                        key={`${index}-${note.title}`}
+                        note={note}
+                        index={index}
+                    />
                 ))}
         </Grid>
     );
