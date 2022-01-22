@@ -28,21 +28,21 @@ const CreateNote = () => {
 
     return (
         <Wrapper>
-        <form onSubmit={handleSubmit}>
-            <input
-                id="note-title"
-                type="text"
-                ref={noteTitleRef}
-                placeholder="Title"
-            />
-            <textarea
-                id="note-description"
-                type="text"
-                ref={noteDescriptionRef}
-                placeholder="Text of the note"
-            />
-            <button type="submit">Create note</button>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <input
+                    id="note-title"
+                    type="text"
+                    ref={noteTitleRef}
+                    placeholder="Title"
+                />
+                <textarea
+                    id="note-description"
+                    type="text"
+                    ref={noteDescriptionRef}
+                    placeholder="Text of the note"
+                />
+                <button type="submit">Create note</button>
+            </form>
         </Wrapper>
     );
 };

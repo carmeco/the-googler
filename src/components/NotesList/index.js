@@ -12,15 +12,15 @@ import NoteBox from "../NoteBox";
 
 const NotesList = () => {
     //getting notes from context
-    const { userNotes } = useContext(UserContext);
-    const userNotesReverse = [...userNotes].reverse();
+    const { userNotes, setUserNotes } = useContext(UserContext);
+    /*  const userNotesReverse = [...userNotes].reverse(); */
 
     return (
         <Grid>
             <CreateNote />
             {userNotes &&
-                userNotesReverse.map((note, index) => (
-                    <NoteBox key={index} note={note} />
+                userNotes.map((note, index) => (
+                    <NoteBox key={index} note={note} index={index} />
                 ))}
         </Grid>
     );
