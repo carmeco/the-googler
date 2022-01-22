@@ -12,8 +12,7 @@ import NoteBox from "../NoteBox";
 
 const NotesList = () => {
     //getting notes from context
-    const { userNotes, setUserNotes } = useContext(UserContext);
-    /*  const userNotesReverse = [...userNotes].reverse(); */
+    const { userNotes } = useContext(UserContext);
 
     return (
         <Grid>

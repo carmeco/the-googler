@@ -4,7 +4,7 @@ import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/userContext";
 
 //styles
-import { Wrapper } from "./MySpace.styles";
+import { Wrapper, Header, Main } from "./MySpace.styles";
 
 //components
 import NotesList from "../../components/NotesList";
@@ -23,8 +23,16 @@ const MySpace = () => {
 
     return (
         <Wrapper>
-            <h1>My Space</h1>
-            <NotesList />
+            <Header>
+                <h1>The Googler</h1>
+                <ul>
+                    <li>Hello {userLogged.userName}!</li>
+                    <li>Log Out</li>
+                </ul>
+            </Header>
+            <Main>
+                <NotesList />
+            </Main>
         </Wrapper>
     );
 };
