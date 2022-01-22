@@ -3,12 +3,15 @@ import React, { useRef, useContext } from "react";
 //context
 import { UserContext } from "../../context/userContext";
 
+//styles
+import { Wrapper } from "./CreateNote.styles";
+
 const CreateNote = () => {
     //refs to DOM elements
     const noteTitleRef = useRef(null);
     const noteDescriptionRef = useRef(null);
 
-    //getting data from context
+    //context for notes
     const { setUserNotes } = useContext(UserContext);
 
     //submit a note
@@ -24,6 +27,7 @@ const CreateNote = () => {
     };
 
     return (
+        <Wrapper>
         <form onSubmit={handleSubmit}>
             <input
                 id="note-title"
@@ -31,7 +35,7 @@ const CreateNote = () => {
                 ref={noteTitleRef}
                 placeholder="Title"
             />
-            <input
+            <textarea
                 id="note-description"
                 type="text"
                 ref={noteDescriptionRef}
@@ -39,6 +43,7 @@ const CreateNote = () => {
             />
             <button type="submit">Create note</button>
         </form>
+        </Wrapper>
     );
 };
 

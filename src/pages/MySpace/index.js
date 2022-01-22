@@ -3,9 +3,11 @@ import React, { useContext, useEffect } from "react";
 //context
 import { UserContext } from "../../context/userContext";
 
+//styles
+import { Wrapper } from "./MySpace.styles";
+
 //components
-import CreateNote from "../../components/CreateNote";
-import SavedNotesList from "../../components/SavedNotesList";
+import NotesList from "../../components/NotesList";
 
 const MySpace = () => {
     //getting data from Context
@@ -20,11 +22,10 @@ const MySpace = () => {
     }, [userLogged, userNotes]);
 
     return (
-        <div>
+        <Wrapper>
             <h1>My Space</h1>
-            <CreateNote />
-            <SavedNotesList />
-        </div>
+            <NotesList />
+        </Wrapper>
     );
 };
 
