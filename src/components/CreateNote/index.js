@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 
 //context
 import { UserContext } from "../../context/userContext";
@@ -8,7 +8,6 @@ import { Wrapper, DescriptionTextArea } from "./CreateNote.styles";
 
 const CreateNote = () => {
     //refs to DOM elements
-    const formRef = useRef(null);
     const noteTitleRef = useRef(null);
     const noteDescriptionRef = useRef(null);
     const noteTagsRef = useRef(null);
@@ -27,12 +26,11 @@ const CreateNote = () => {
                 tags: noteTagsRef.current.value,
             },
         ]);
-        formRef.current.reset();
     };
 
     return (
         <Wrapper>
-            <form onSubmit={handleSubmit} ref={formRef}>
+            <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     ref={noteTitleRef}
